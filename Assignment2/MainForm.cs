@@ -4,6 +4,11 @@ namespace Assignment2
 {
     public partial class MainForm : Form
     {
+        // enum used to select the color radio buttons
+        private enum carColor
+        {
+            Red, Blue, Black, White
+        }
         public MainForm()
         {
             InitializeComponent();
@@ -18,6 +23,7 @@ namespace Assignment2
         {
             int year;
             string summary = "";
+
             if (makeAndModelList.SelectedItem == null)
             {
                 summary = "Please select a make and model before purchasing.";
@@ -30,13 +36,23 @@ namespace Assignment2
             }
             else
             {
-                summary = $"You have purchased a {yearTextBox.Text} {makeAndModelList.SelectedItem} with the following features: ";
+                carColor? selectedColor = null; // Null if none of the radio buttons are selected
+
+                if (redRadioButton.Checked) selectedColor = carColor.Red;
+                else if (blueRadioButton.Checked) selectedColor = carColor.Blue;
+                else if (blackRadioButton.Checked) selectedColor = carColor.Black;
+                else if (whiteRadioButton.Checked) selectedColor = carColor.White;
+
+                summary = $"You have purchased a {selectedColor} {yearTextBox.Text} {makeAndModelList.SelectedItem} with the following features: ";
+
                 if (acCheckBox.Checked) summary += acCheckBox.Text + ", ";
                 if (powerWindowsCheckBox.Checked) summary += powerWindowsCheckBox.Text + ", ";
                 if (syriusCheckBox.Checked) summary += syriusCheckBox.Text + ", ";
                 if (laneAssistCheckBox.Checked) summary += laneAssistCheckBox.Text + ", ";
+
                 summary = summary.TrimEnd(',', ' ');
-                summaryLabel.ForeColor = Color.Black;
+
+                summaryLabel.ForeColor = Color.Black; // Change back to black if there was an error
             }
             summaryLabel.Text = summary;
         }
