@@ -30,6 +30,8 @@
         {
             makeAndModelLabel = new Label();
             makeAndModelList = new ListBox();
+            yearLabel = new Label();
+            yearTextBox = new TextBox();
             SuspendLayout();
             // 
             // makeAndModelLabel
@@ -51,11 +53,29 @@
             makeAndModelList.Size = new Size(120, 94);
             makeAndModelList.TabIndex = 1;
             // 
+            // yearLabel
+            // 
+            yearLabel.AutoSize = true;
+            yearLabel.Location = new Point(186, 32);
+            yearLabel.Name = "yearLabel";
+            yearLabel.Size = new Size(29, 15);
+            yearLabel.TabIndex = 2;
+            yearLabel.Text = "&Year";
+            // 
+            // yearTextBox
+            // 
+            yearTextBox.Location = new Point(186, 50);
+            yearTextBox.Name = "yearTextBox";
+            yearTextBox.Size = new Size(100, 23);
+            yearTextBox.TabIndex = 3;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(yearTextBox);
+            Controls.Add(yearLabel);
             Controls.Add(makeAndModelList);
             Controls.Add(makeAndModelLabel);
             Name = "MainForm";
@@ -68,5 +88,7 @@
 
         private Label makeAndModelLabel;
         private ListBox makeAndModelList;
+        private Label yearLabel;
+        private TextBox yearTextBox;
     }
 }
