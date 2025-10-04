@@ -16,10 +16,16 @@ namespace Assignment2
 
         private void purchaseButton_Click(object sender, EventArgs e)
         {
+            int year;
             string summary = "";
             if (makeAndModelList.SelectedItem == null)
             {
                 summary = "Please select a make and model before purchasing.";
+                summaryLabel.ForeColor = Color.Red;
+            }
+            else if (!int.TryParse(yearTextBox.Text, out year))
+            {
+                summary = "Please enter a valid year";
                 summaryLabel.ForeColor = Color.Red;
             }
             else
