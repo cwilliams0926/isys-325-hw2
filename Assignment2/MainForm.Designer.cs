@@ -33,15 +33,15 @@
             yearLabel = new Label();
             yearTextBox = new TextBox();
             colorGroupBox = new GroupBox();
-            redRadioButton = new RadioButton();
-            blueRadioButton = new RadioButton();
-            blackRadioButton = new RadioButton();
             whiteRadioButton = new RadioButton();
+            blackRadioButton = new RadioButton();
+            blueRadioButton = new RadioButton();
+            redRadioButton = new RadioButton();
             featuresGroupBox = new GroupBox();
-            acCheckBox = new CheckBox();
-            powerWindowsCheckBox = new CheckBox();
-            syriusCheckBox = new CheckBox();
             laneAssistCheckBox = new CheckBox();
+            syriusCheckBox = new CheckBox();
+            powerWindowsCheckBox = new CheckBox();
+            acCheckBox = new CheckBox();
             purchaseButton = new Button();
             summaryLabel = new Label();
             colorGroupBox.SuspendLayout();
@@ -66,6 +66,7 @@
             makeAndModelList.Name = "makeAndModelList";
             makeAndModelList.Size = new Size(120, 94);
             makeAndModelList.TabIndex = 1;
+            makeAndModelList.SelectedIndexChanged += makeAndModelList_SelectedIndexChanged;
             // 
             // yearLabel
             // 
@@ -82,6 +83,7 @@
             yearTextBox.Name = "yearTextBox";
             yearTextBox.Size = new Size(100, 23);
             yearTextBox.TabIndex = 3;
+            yearTextBox.TextChanged += yearTextBox_TextChanged;
             // 
             // colorGroupBox
             // 
@@ -95,28 +97,18 @@
             colorGroupBox.TabIndex = 4;
             colorGroupBox.TabStop = false;
             colorGroupBox.Text = "&Color";
+            colorGroupBox.Enter += colorGroupBox_Enter;
             // 
-            // redRadioButton
+            // whiteRadioButton
             // 
-            redRadioButton.AutoSize = true;
-            redRadioButton.Location = new Point(18, 41);
-            redRadioButton.Name = "redRadioButton";
-            redRadioButton.Size = new Size(45, 19);
-            redRadioButton.TabIndex = 0;
-            redRadioButton.TabStop = true;
-            redRadioButton.Text = "Red";
-            redRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // blueRadioButton
-            // 
-            blueRadioButton.AutoSize = true;
-            blueRadioButton.Location = new Point(18, 66);
-            blueRadioButton.Name = "blueRadioButton";
-            blueRadioButton.Size = new Size(48, 19);
-            blueRadioButton.TabIndex = 1;
-            blueRadioButton.TabStop = true;
-            blueRadioButton.Text = "Blue";
-            blueRadioButton.UseVisualStyleBackColor = true;
+            whiteRadioButton.AutoSize = true;
+            whiteRadioButton.Location = new Point(18, 116);
+            whiteRadioButton.Name = "whiteRadioButton";
+            whiteRadioButton.Size = new Size(56, 19);
+            whiteRadioButton.TabIndex = 3;
+            whiteRadioButton.TabStop = true;
+            whiteRadioButton.Text = "White";
+            whiteRadioButton.UseVisualStyleBackColor = true;
             // 
             // blackRadioButton
             // 
@@ -129,16 +121,27 @@
             blackRadioButton.Text = "Black";
             blackRadioButton.UseVisualStyleBackColor = true;
             // 
-            // whiteRadioButton
+            // blueRadioButton
             // 
-            whiteRadioButton.AutoSize = true;
-            whiteRadioButton.Location = new Point(18, 116);
-            whiteRadioButton.Name = "whiteRadioButton";
-            whiteRadioButton.Size = new Size(56, 19);
-            whiteRadioButton.TabIndex = 3;
-            whiteRadioButton.TabStop = true;
-            whiteRadioButton.Text = "White";
-            whiteRadioButton.UseVisualStyleBackColor = true;
+            blueRadioButton.AutoSize = true;
+            blueRadioButton.Location = new Point(18, 66);
+            blueRadioButton.Name = "blueRadioButton";
+            blueRadioButton.Size = new Size(48, 19);
+            blueRadioButton.TabIndex = 1;
+            blueRadioButton.TabStop = true;
+            blueRadioButton.Text = "Blue";
+            blueRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // redRadioButton
+            // 
+            redRadioButton.AutoSize = true;
+            redRadioButton.Location = new Point(18, 41);
+            redRadioButton.Name = "redRadioButton";
+            redRadioButton.Size = new Size(45, 19);
+            redRadioButton.TabIndex = 0;
+            redRadioButton.TabStop = true;
+            redRadioButton.Text = "Red";
+            redRadioButton.UseVisualStyleBackColor = true;
             // 
             // featuresGroupBox
             // 
@@ -152,36 +155,7 @@
             featuresGroupBox.TabIndex = 5;
             featuresGroupBox.TabStop = false;
             featuresGroupBox.Text = "&Features";
-            // 
-            // acCheckBox
-            // 
-            acCheckBox.AutoSize = true;
-            acCheckBox.Location = new Point(17, 41);
-            acCheckBox.Name = "acCheckBox";
-            acCheckBox.Size = new Size(42, 19);
-            acCheckBox.TabIndex = 0;
-            acCheckBox.Text = "AC";
-            acCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // powerWindowsCheckBox
-            // 
-            powerWindowsCheckBox.AutoSize = true;
-            powerWindowsCheckBox.Location = new Point(17, 66);
-            powerWindowsCheckBox.Name = "powerWindowsCheckBox";
-            powerWindowsCheckBox.Size = new Size(111, 19);
-            powerWindowsCheckBox.TabIndex = 1;
-            powerWindowsCheckBox.Text = "Power Windows";
-            powerWindowsCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // syriusCheckBox
-            // 
-            syriusCheckBox.AutoSize = true;
-            syriusCheckBox.Location = new Point(17, 91);
-            syriusCheckBox.Name = "syriusCheckBox";
-            syriusCheckBox.Size = new Size(90, 19);
-            syriusCheckBox.TabIndex = 2;
-            syriusCheckBox.Text = "Syrius Radio";
-            syriusCheckBox.UseVisualStyleBackColor = true;
+            featuresGroupBox.Enter += featuresGroupBox_Enter;
             // 
             // laneAssistCheckBox
             // 
@@ -193,6 +167,36 @@
             laneAssistCheckBox.Text = "Lane Assist";
             laneAssistCheckBox.UseVisualStyleBackColor = true;
             // 
+            // syriusCheckBox
+            // 
+            syriusCheckBox.AutoSize = true;
+            syriusCheckBox.Location = new Point(17, 91);
+            syriusCheckBox.Name = "syriusCheckBox";
+            syriusCheckBox.Size = new Size(90, 19);
+            syriusCheckBox.TabIndex = 2;
+            syriusCheckBox.Text = "Syrius Radio";
+            syriusCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // powerWindowsCheckBox
+            // 
+            powerWindowsCheckBox.AutoSize = true;
+            powerWindowsCheckBox.Location = new Point(17, 66);
+            powerWindowsCheckBox.Name = "powerWindowsCheckBox";
+            powerWindowsCheckBox.Size = new Size(111, 19);
+            powerWindowsCheckBox.TabIndex = 1;
+            powerWindowsCheckBox.Text = "Power Windows";
+            powerWindowsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // acCheckBox
+            // 
+            acCheckBox.AutoSize = true;
+            acCheckBox.Location = new Point(17, 41);
+            acCheckBox.Name = "acCheckBox";
+            acCheckBox.Size = new Size(42, 19);
+            acCheckBox.TabIndex = 0;
+            acCheckBox.Text = "AC";
+            acCheckBox.UseVisualStyleBackColor = true;
+            // 
             // purchaseButton
             // 
             purchaseButton.Location = new Point(57, 338);
@@ -201,6 +205,7 @@
             purchaseButton.TabIndex = 6;
             purchaseButton.Text = "&Purchase";
             purchaseButton.UseVisualStyleBackColor = true;
+            purchaseButton.Click += purchaseButton_Click;
             // 
             // summaryLabel
             // 
@@ -210,6 +215,7 @@
             summaryLabel.Size = new Size(602, 74);
             summaryLabel.TabIndex = 7;
             summaryLabel.TextAlign = ContentAlignment.MiddleCenter;
+            summaryLabel.Click += summaryLabel_Click;
             // 
             // MainForm
             // 
