@@ -20,6 +20,7 @@ namespace Assignment2
             if (makeAndModelList.SelectedItem == null)
             {
                 summary = "Please select a make and model before purchasing.";
+                summaryLabel.ForeColor = Color.Red;
             }
             else
             {
@@ -29,6 +30,7 @@ namespace Assignment2
                 if (syriusCheckBox.Checked) summary += syriusCheckBox.Text + ", ";
                 if (laneAssistCheckBox.Checked) summary += laneAssistCheckBox.Text + ", ";
                 summary = summary.TrimEnd(',', ' ');
+                summaryLabel.ForeColor = Color.Black;
             }
             summaryLabel.Text = summary;
         }
