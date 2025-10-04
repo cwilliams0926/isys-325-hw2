@@ -32,6 +32,12 @@
             makeAndModelList = new ListBox();
             yearLabel = new Label();
             yearTextBox = new TextBox();
+            colorGroupBox = new GroupBox();
+            redRadioButton = new RadioButton();
+            blueRadioButton = new RadioButton();
+            blackRadioButton = new RadioButton();
+            whiteRadioButton = new RadioButton();
+            colorGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // makeAndModelLabel
@@ -69,17 +75,77 @@
             yearTextBox.Size = new Size(100, 23);
             yearTextBox.TabIndex = 3;
             // 
+            // colorGroupBox
+            // 
+            colorGroupBox.Controls.Add(whiteRadioButton);
+            colorGroupBox.Controls.Add(blackRadioButton);
+            colorGroupBox.Controls.Add(blueRadioButton);
+            colorGroupBox.Controls.Add(redRadioButton);
+            colorGroupBox.Location = new Point(342, 32);
+            colorGroupBox.Name = "colorGroupBox";
+            colorGroupBox.Size = new Size(200, 174);
+            colorGroupBox.TabIndex = 4;
+            colorGroupBox.TabStop = false;
+            colorGroupBox.Text = "&Color";
+            // 
+            // redRadioButton
+            // 
+            redRadioButton.AutoSize = true;
+            redRadioButton.Location = new Point(18, 41);
+            redRadioButton.Name = "redRadioButton";
+            redRadioButton.Size = new Size(45, 19);
+            redRadioButton.TabIndex = 0;
+            redRadioButton.TabStop = true;
+            redRadioButton.Text = "Red";
+            redRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // blueRadioButton
+            // 
+            blueRadioButton.AutoSize = true;
+            blueRadioButton.Location = new Point(18, 66);
+            blueRadioButton.Name = "blueRadioButton";
+            blueRadioButton.Size = new Size(48, 19);
+            blueRadioButton.TabIndex = 1;
+            blueRadioButton.TabStop = true;
+            blueRadioButton.Text = "Blue";
+            blueRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // blackRadioButton
+            // 
+            blackRadioButton.AutoSize = true;
+            blackRadioButton.Location = new Point(18, 91);
+            blackRadioButton.Name = "blackRadioButton";
+            blackRadioButton.Size = new Size(53, 19);
+            blackRadioButton.TabIndex = 2;
+            blackRadioButton.TabStop = true;
+            blackRadioButton.Text = "Black";
+            blackRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // whiteRadioButton
+            // 
+            whiteRadioButton.AutoSize = true;
+            whiteRadioButton.Location = new Point(18, 116);
+            whiteRadioButton.Name = "whiteRadioButton";
+            whiteRadioButton.Size = new Size(56, 19);
+            whiteRadioButton.TabIndex = 3;
+            whiteRadioButton.TabStop = true;
+            whiteRadioButton.Text = "White";
+            whiteRadioButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(colorGroupBox);
             Controls.Add(yearTextBox);
             Controls.Add(yearLabel);
             Controls.Add(makeAndModelList);
             Controls.Add(makeAndModelLabel);
             Name = "MainForm";
             Text = "Assignment 2";
+            colorGroupBox.ResumeLayout(false);
+            colorGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -90,5 +156,10 @@
         private ListBox makeAndModelList;
         private Label yearLabel;
         private TextBox yearTextBox;
+        private GroupBox colorGroupBox;
+        private RadioButton whiteRadioButton;
+        private RadioButton blackRadioButton;
+        private RadioButton blueRadioButton;
+        private RadioButton redRadioButton;
     }
 }
