@@ -42,6 +42,7 @@
             powerWindowsCheckBox = new CheckBox();
             syriusCheckBox = new CheckBox();
             laneAssistCheckBox = new CheckBox();
+            purchaseButton = new Button();
             colorGroupBox.SuspendLayout();
             featuresGroupBox.SuspendLayout();
             SuspendLayout();
@@ -191,11 +192,21 @@
             laneAssistCheckBox.Text = "Lane Assist";
             laneAssistCheckBox.UseVisualStyleBackColor = true;
             // 
+            // purchaseButton
+            // 
+            purchaseButton.Location = new Point(57, 338);
+            purchaseButton.Name = "purchaseButton";
+            purchaseButton.Size = new Size(75, 23);
+            purchaseButton.TabIndex = 6;
+            purchaseButton.Text = "&Purchase";
+            purchaseButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(purchaseButton);
             Controls.Add(featuresGroupBox);
             Controls.Add(colorGroupBox);
             Controls.Add(yearTextBox);
@@ -228,5 +239,6 @@
         private CheckBox syriusCheckBox;
         private CheckBox powerWindowsCheckBox;
         private CheckBox acCheckBox;
+        private Button purchaseButton;
     }
 }
