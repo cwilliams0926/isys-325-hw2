@@ -43,6 +43,7 @@
             syriusCheckBox = new CheckBox();
             laneAssistCheckBox = new CheckBox();
             purchaseButton = new Button();
+            summaryLabel = new Label();
             colorGroupBox.SuspendLayout();
             featuresGroupBox.SuspendLayout();
             SuspendLayout();
@@ -201,11 +202,21 @@
             purchaseButton.Text = "&Purchase";
             purchaseButton.UseVisualStyleBackColor = true;
             // 
+            // summaryLabel
+            // 
+            summaryLabel.BorderStyle = BorderStyle.FixedSingle;
+            summaryLabel.Location = new Point(186, 338);
+            summaryLabel.Name = "summaryLabel";
+            summaryLabel.Size = new Size(602, 74);
+            summaryLabel.TabIndex = 7;
+            summaryLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(summaryLabel);
             Controls.Add(purchaseButton);
             Controls.Add(featuresGroupBox);
             Controls.Add(colorGroupBox);
@@ -240,5 +251,6 @@
         private CheckBox powerWindowsCheckBox;
         private CheckBox acCheckBox;
         private Button purchaseButton;
+        private Label summaryLabel;
     }
 }
