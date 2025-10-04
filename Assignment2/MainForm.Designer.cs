@@ -37,7 +37,13 @@
             blueRadioButton = new RadioButton();
             blackRadioButton = new RadioButton();
             whiteRadioButton = new RadioButton();
+            featuresGroupBox = new GroupBox();
+            acCheckBox = new CheckBox();
+            powerWindowsCheckBox = new CheckBox();
+            syriusCheckBox = new CheckBox();
+            laneAssistCheckBox = new CheckBox();
             colorGroupBox.SuspendLayout();
+            featuresGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // makeAndModelLabel
@@ -132,11 +138,65 @@
             whiteRadioButton.Text = "White";
             whiteRadioButton.UseVisualStyleBackColor = true;
             // 
+            // featuresGroupBox
+            // 
+            featuresGroupBox.Controls.Add(laneAssistCheckBox);
+            featuresGroupBox.Controls.Add(syriusCheckBox);
+            featuresGroupBox.Controls.Add(powerWindowsCheckBox);
+            featuresGroupBox.Controls.Add(acCheckBox);
+            featuresGroupBox.Location = new Point(588, 32);
+            featuresGroupBox.Name = "featuresGroupBox";
+            featuresGroupBox.Size = new Size(200, 174);
+            featuresGroupBox.TabIndex = 5;
+            featuresGroupBox.TabStop = false;
+            featuresGroupBox.Text = "&Features";
+            // 
+            // acCheckBox
+            // 
+            acCheckBox.AutoSize = true;
+            acCheckBox.Location = new Point(17, 41);
+            acCheckBox.Name = "acCheckBox";
+            acCheckBox.Size = new Size(42, 19);
+            acCheckBox.TabIndex = 0;
+            acCheckBox.Text = "AC";
+            acCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // powerWindowsCheckBox
+            // 
+            powerWindowsCheckBox.AutoSize = true;
+            powerWindowsCheckBox.Location = new Point(17, 66);
+            powerWindowsCheckBox.Name = "powerWindowsCheckBox";
+            powerWindowsCheckBox.Size = new Size(111, 19);
+            powerWindowsCheckBox.TabIndex = 1;
+            powerWindowsCheckBox.Text = "Power Windows";
+            powerWindowsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // syriusCheckBox
+            // 
+            syriusCheckBox.AutoSize = true;
+            syriusCheckBox.Location = new Point(17, 91);
+            syriusCheckBox.Name = "syriusCheckBox";
+            syriusCheckBox.Size = new Size(90, 19);
+            syriusCheckBox.TabIndex = 2;
+            syriusCheckBox.Text = "Syrius Radio";
+            syriusCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // laneAssistCheckBox
+            // 
+            laneAssistCheckBox.AutoSize = true;
+            laneAssistCheckBox.Location = new Point(17, 116);
+            laneAssistCheckBox.Name = "laneAssistCheckBox";
+            laneAssistCheckBox.Size = new Size(84, 19);
+            laneAssistCheckBox.TabIndex = 3;
+            laneAssistCheckBox.Text = "Lane Assist";
+            laneAssistCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(featuresGroupBox);
             Controls.Add(colorGroupBox);
             Controls.Add(yearTextBox);
             Controls.Add(yearLabel);
@@ -146,6 +206,8 @@
             Text = "Assignment 2";
             colorGroupBox.ResumeLayout(false);
             colorGroupBox.PerformLayout();
+            featuresGroupBox.ResumeLayout(false);
+            featuresGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -161,5 +223,10 @@
         private RadioButton blackRadioButton;
         private RadioButton blueRadioButton;
         private RadioButton redRadioButton;
+        private GroupBox featuresGroupBox;
+        private CheckBox laneAssistCheckBox;
+        private CheckBox syriusCheckBox;
+        private CheckBox powerWindowsCheckBox;
+        private CheckBox acCheckBox;
     }
 }
