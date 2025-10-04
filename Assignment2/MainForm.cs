@@ -1,9 +1,9 @@
+using System.Diagnostics.Eventing.Reader;
+
 namespace Assignment2
 {
     public partial class MainForm : Form
     {
-        private string year;
-        private string makeAndModel;
         public MainForm()
         {
             InitializeComponent();
@@ -16,12 +16,20 @@ namespace Assignment2
 
         private void purchaseButton_Click(object sender, EventArgs e)
         {
-            string summary = $"You have purchased a {year} {makeAndModel} with the following features: ";
-            if (acCheckBox.Checked) summary += acCheckBox.Text + ", ";
-            if (powerWindowsCheckBox.Checked) summary += powerWindowsCheckBox.Text + ", ";
-            if (syriusCheckBox.Checked) summary += syriusCheckBox.Text + ", ";
-            if (laneAssistCheckBox.Checked) summary += laneAssistCheckBox.Text + ", ";
-            summary = summary.TrimEnd(',', ' ');
+            string summary = "";
+            if (makeAndModelList.SelectedItem == null)
+            {
+                summary = "Please select a make and model before purchasing.";
+            }
+            else
+            {
+                summary = $"You have purchased a {yearTextBox.Text} {makeAndModelList.SelectedItem} with the following features: ";
+                if (acCheckBox.Checked) summary += acCheckBox.Text + ", ";
+                if (powerWindowsCheckBox.Checked) summary += powerWindowsCheckBox.Text + ", ";
+                if (syriusCheckBox.Checked) summary += syriusCheckBox.Text + ", ";
+                if (laneAssistCheckBox.Checked) summary += laneAssistCheckBox.Text + ", ";
+                summary = summary.TrimEnd(',', ' ');
+            }
             summaryLabel.Text = summary;
         }
 
